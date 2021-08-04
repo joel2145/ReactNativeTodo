@@ -6,10 +6,10 @@ export default function App() {
     <View style={styles.container}>
 
       {/* ヘッダー */}
-      <View>
-        <View>
-          <Text>Memo App</Text>
-          <Text>ログアウト</Text>
+      <View style={styles.header}>
+        <View style={styles.headerInner}>
+          <Text style={styles.headerTitle}>Memo App</Text>
+          <Text style={styles.headerLogOut}>ログアウト</Text>
         </View>
       </View>
 
@@ -51,7 +51,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  header: {
+    width: "100%",
+    height: 100,
+    backgroundColor: "skyblue",
+    justifyContent: "flex-end",
+  },
+  headerInner: {
+    alignItems: "center",
+  },
+  headerTitle: {
+    fontSize: 23,
+    color: "#fff",
+  },
+  headerLogOut: {
+    position: "absolute",
+    right: 18,
+    bottom: 8,
+    color: "#fff",
   },
 });
