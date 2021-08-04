@@ -16,10 +16,10 @@ export default function App() {
       {/* メモリスト */}
       <View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
             <Text>買い物リスト</Text>
-            <Text>2021年8月4日 10:00</Text>
+            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
           </View>
           <View>
             <Text>削除</Text>
@@ -70,5 +70,14 @@ const styles = StyleSheet.create({
     right: 18,
     bottom: 8,
     color: "#fff",
+  },
+  memoListItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+  },
+  memoListItemDate: {
+    color: "gray",
   },
 });
