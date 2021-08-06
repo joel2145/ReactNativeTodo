@@ -1,57 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Header from "./src/components/Header";
+import MemoList from "./src/components/MemoList";
+import NewButton from "./src/components/NewButton";
 
 export default function App() {
   return (
     <View style={styles.container}>
 
-      {/* ヘッダー */}
-      <View style={styles.header}>
-        <View style={styles.headerInner}>
-          <Text style={styles.headerTitle}>Memo App</Text>
-          <Text style={styles.headerLogOut}>ログアウト</Text>
-        </View>
-      </View>
+      <Header />
 
-      {/* メモリスト */}
-      <View>
+      <MemoList />
 
-        <View style={styles.memoListItem}>
-          <View>
-            <Text>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
-          </View>
-          <View>
-            <Text>削除</Text>
-          </View>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <View>
-            <Text>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
-          </View>
-          <View>
-            <Text>削除</Text>
-          </View>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <View>
-            <Text>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
-          </View>
-          <View>
-            <Text>削除</Text>
-          </View>
-        </View>
-
-      </View>
-
-      {/* 新規メモ作成ボタン */}
-      <View style={styles.newButton}>
-        <Text style={styles.newButtonLabel}>＋</Text>
-      </View>
+      <NewButton>＋</NewButton>
 
     </View >
   );
@@ -61,55 +23,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  header: {
-    width: "100%",
-    height: 100,
-    backgroundColor: "skyblue",
-    justifyContent: "flex-end",
-  },
-  headerInner: {
-    alignItems: "center",
-  },
-  headerTitle: {
-    fontSize: 23,
-    color: "#fff",
-    paddingBottom: 10,
-  },
-  headerLogOut: {
-    position: "absolute",
-    right: 18,
-    bottom: 8,
-    color: "#fff",
-  },
-  memoListItem: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
-    borderColor: "rgba(0,0,0,0.15)",
-  },
-  memoListItemDate: {
-    color: "gray",
-  },
-  newButton: {
-    backgroundColor: "skyblue",
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-    right: 30,
-    bottom: 40,
-    shadowColor: "black",
-    shadowOffset: { width: 2, height: 8 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
-  },
-  newButtonLabel: {
-    color: "white",
-    fontSize: 30,
   },
 });
