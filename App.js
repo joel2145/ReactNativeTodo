@@ -26,10 +26,20 @@ export default function App() {
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>宿題</Text>
-            <Text>2021年8月4日 12:00</Text>
+            <Text>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
+          </View>
+          <View>
+            <Text>削除</Text>
+          </View>
+        </View>
+
+        <View style={styles.memoListItem}>
+          <View>
+            <Text>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2021年8月4日 10:00</Text>
           </View>
           <View>
             <Text>削除</Text>
@@ -64,6 +74,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 23,
     color: "#fff",
+    paddingBottom: 10,
   },
   headerLogOut: {
     position: "absolute",
@@ -76,6 +87,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingVertical: 16,
     paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderColor: "rgba(0,0,0,0.15)",
   },
   memoListItemDate: {
     color: "gray",
