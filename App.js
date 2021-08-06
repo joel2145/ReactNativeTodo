@@ -49,11 +49,11 @@ export default function App() {
       </View>
 
       {/* 新規メモ作成ボタン */}
-      <View>
-        <Text>＋</Text>
+      <View style={styles.newButton}>
+        <Text style={styles.newButtonLabel}>＋</Text>
       </View>
 
-    </View>
+    </View >
   );
 }
 
@@ -92,5 +92,24 @@ const styles = StyleSheet.create({
   },
   memoListItemDate: {
     color: "gray",
+  },
+  newButton: {
+    backgroundColor: "skyblue",
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    right: 30,
+    bottom: 40,
+    shadowColor: "black",
+    shadowOffset: { width: 2, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+  },
+  newButtonLabel: {
+    color: "white",
+    fontSize: 30,
   },
 });
