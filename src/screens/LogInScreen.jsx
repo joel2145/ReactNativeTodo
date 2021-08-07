@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, TextInput } from "react-native";
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 
 import Header from "../components/Header";
 import Button from "../components/Button";
@@ -13,9 +13,9 @@ export default function LogInScreen() {
                 <TextInput value="Email Address" style={styles.input} />
                 <TextInput value="Password" style={styles.input} />
                 <Button label="Submit" />
-                <View>
+                <TouchableOpacity >
                     <Text style={styles.footerLink}>新規登録はこちら</Text>
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
