@@ -4,17 +4,17 @@ import { View, StyleSheet, Text, TextInput } from "react-native";
 import Header from "../components/Header";
 import Button from "../components/Button";
 
-export default function LogInScreen() {
+export default function SignUpScreen() {
     return (
         <View style={styles.container}>
             <Header />
             <View style={styles.inner}>
-                <Text style={styles.title}>ログイン</Text>
+                <Text style={styles.title}>新規登録</Text>
                 <TextInput value="Email Address" style={styles.input} />
                 <TextInput value="Password" style={styles.input} />
                 <Button label="Submit" />
                 <View>
-                    <Text style={styles.footerLink}>新規登録はこちら</Text>
+                    <Text style={styles.footerLink}>登録済みの方はこちら</Text>
                 </View>
             </View>
         </View>
