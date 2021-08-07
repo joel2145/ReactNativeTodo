@@ -1,27 +1,15 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 
-import Header from "./src/components/Header";
-import MemoList from "./src/components/MemoList";
-import NewButton from "./src/components/NewButton";
+import MemoListScreen from "./src/screens/MemoListScreen";
+import MemoDetailScreen from "./src/screens/MemoDetailScreen";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
+      {/* <MemoListScreen /> */}
+      <MemoDetailScreen />
+    </>
 
-      <Header />
-
-      <MemoList />
-
-      <NewButton>＋</NewButton>
-
-    </View >
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

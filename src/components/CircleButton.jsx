@@ -1,17 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function NewButton(props) {
-    const { children } = props;
+export default function CircleButton(props) {
+    const { children, style } = props;
     return (
-        <View style={styles.newButton}>
-            <Text style={styles.newButtonLabel}>{children}</Text>
+        <View style={[styles.CircleButton, style]}>
+            <Text style={styles.CircleButtonLabel}>{children}</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    newButton: {
+    CircleButton: {
         backgroundColor: "skyblue",
         width: 64,
         height: 64,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 8,
     },
-    newButtonLabel: {
+    CircleButtonLabel: {
         color: "white",
         fontSize: 30,
     },
