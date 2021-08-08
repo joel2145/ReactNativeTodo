@@ -1,21 +1,36 @@
 import React from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 
-import Header from "../components/Header";
 import Button from "../components/Button";
 
-export default function SignUpScreen() {
+export default function SignUpScreen(props) {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
-            <Header />
             <View style={styles.inner}>
                 <Text style={styles.title}>新規登録</Text>
                 <TextInput value="Email Address" style={styles.input} />
                 <TextInput value="Password" style={styles.input} />
-                <Button label="Submit" />
+                <Button
+                    label="Submit"
+                    onPress={() => {
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: "MemoList" }],
+                        });
+                    }}
+                />
                 <View>
                     <TouchableOpacity >
-                        <Text style={styles.footerLink}>登録済みの方はこちら</Text>
+                        <Text
+                            style={styles.footerLink}
+                            onPress={() => {
+                                navigation.reset({
+                                    index: 0,
+                                    routes: [{ name: "LogIn" }],
+                                });
+                            }}
+                        >既に登録済みの方はこちら</Text>
                     </TouchableOpacity>
                 </View>
             </View>
