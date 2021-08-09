@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import firebase from "firebase";
 
 import Button from "../components/Button";
 
@@ -8,6 +9,23 @@ export default function SignUpScreen(props) {
     const { navigation } = props;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    // 会員登録機能
+    function handlePress() {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            // 会員登録が成功した時の処理
+            .then((userCredential) => {
+                const { user } = userCredential;
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: "MemoList" }],
+                });
+            })
+            // 会員登録に失敗した時の処理
+            .catch((error) => {
+                Alert.alert(error.code);
+            });
+    }
 
     return (
         <View style={styles.container}>
@@ -33,12 +51,7 @@ export default function SignUpScreen(props) {
                 />
                 <Button
                     label="Submit"
-                    onPress={() => {
-                        navigation.reset({
-                            index: 0,
-                            routes: [{ name: "MemoList" }],
-                        });
-                    }}
+                    onPress={handlePress}
                 />
                 <View>
                     <TouchableOpacity >
