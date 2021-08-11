@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TextInput, TouchableOpacity, Alert } from "reac
 import firebase from "firebase";
 
 import Button from "../components/Button";
+import { translateErrors } from "../utils/index";
 
 export default function SignUpScreen(props) {
 
@@ -23,7 +24,8 @@ export default function SignUpScreen(props) {
             })
             // 会員登録に失敗した時の処理
             .catch((error) => {
-                Alert.alert(error.code);
+                const errorMessage = translateErrors(error.code);
+                Alert.alert(errorMessage.title, errorMessage.description);
             });
     }
 
